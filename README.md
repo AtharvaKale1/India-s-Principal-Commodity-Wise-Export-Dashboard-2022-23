@@ -1,134 +1,186 @@
-# 📊 India's Principal Commodity-wise Export Dashboard (2022–23)
+# 🇺🇳 AI-Driven Analysis of India's Principal Commodity-wise Exports (2021–24)
 
-Welcome to the **Interactive Data Analysis Dashboard** for India’s Principal Commodity-wise Export data (2022–2023)! This project is a comprehensive analysis and visualization tool developed using **Streamlit** to offer insightful, responsive, and user-friendly interaction with real-world export data.
+## 🔍 Overview
 
-> ⚠️ **Note:** This is **Phase 1** of our ongoing project. More enhancements, advanced analytics, and features are coming soon!
+This project focuses on analyzing **India's Principal Commodity-wise Export Data for FY 2021–24**, sourced from the **Government of India Open Data Portal**. It uses **Data Science, Machine Learning, and Visualization techniques** to uncover trade patterns, segment export commodities, and provide actionable insights for policymakers, investors, and exporters.
 
----
-
-## 🚀 Project Objective
-
-To analyze, cluster, and visually explore India's commodity-wise exports using machine learning and data visualization techniques—helping users gain business and trade insights interactively.
+The project integrates the complete **data analytics lifecycle** — from **data cleaning and preprocessing** to **exploratory data analysis (EDA)**, **advanced analytics (PCA, K-Means, Regression models)**, and **interactive dashboard deployment using Streamlit**.
 
 ---
 
-## 📂 Dataset Overview
+## 📊 Project Objectives
 
-* **Dataset Title:** Principal Commodity-wise Exports (2022–23)
-* **Source:** Government of India (DGCI\&S)
-* **Format:** Excel (.xlsx)
-* **Key Columns:**
-
-  * `COMMODITY_NAME`
-  * `COUNTRY`
-  * `UNIT`
-  * `QUANTITY_KGS`
-  * `VALUE_USD_MILLION`
-  * `PRICE_PER_KG`
-  * `CLUSTER` (generated using KMeans clustering)
+* Analyze India's export composition at the commodity and country level.
+* Identify top-performing export sectors and countries.
+* Use **unsupervised learning (K-Means)** to segment commodities by trade characteristics.
+* Apply **Principal Component Analysis (PCA)** for dimensionality reduction and visualization.
+* Implement regression models (**Random Forest, Linear, Decision Tree**) to understand export value prediction patterns.
+* Build a **Streamlit Dashboard** for real-time, interactive exploration of export trends and model outputs.
 
 ---
 
-## 🧐 Key Features & Insights
+## 🔢 Dataset Information
 
-✅ **EDA & Data Cleaning**
+**Source:** [data.gov.in](https://data.gov.in)
+**Dataset Title:** Principal Commodity-wise Export Data (FY 2021–24)
+**Files Used:**
 
-* Handled missing data and standardized units.
-* Added computed columns like `PRICE_PER_KG`.
+* `Principal_Commodity_wise_export_for_the_year_2021-24.xlsx` (Raw Data)
+* `Cleaned_Principal_Commodity_Exports.xlsx` (Processed Data)
+* `Export Data.ipynb` (Jupyter Notebook – full analysis)
+* `app.py` (Streamlit Dashboard App)
 
-✅ **Machine Learning**
+**Key Columns:**
 
-* Applied **KMeans Clustering** to identify export patterns.
-* Used **PCA** for dimensionality reduction and visual representation.
-
-✅ **Business Insights**
-
-* Top 10 most expensive/cheapest commodities by price per kg.
-* Cluster-wise average prices and high-value exports.
-* Country-wise export distribution and total export values.
-
-✅ **Streamlit Dashboard**
-
-* Clean UI and interactive filters.
-* Responsive plots (Pie, Bar, Box, Line).
-* User can explore:
-
-  * Commodity performance
-  * Country-wise insights
-  * Cluster distributions
+* `COMMODITY_NAME`
+* `COUNTRY`
+* `UNIT`
+* `QUANTITY`
+* `VALUE (US$ Million)`
+* Derived feature: `PRICE_PER_KG = VALUE / QUANTITY`
 
 ---
 
-## 🛠️ Tech Stack
+## 📚 Project Workflow
 
-| Category            | Tools Used                                 |
-| ------------------- | ------------------------------------------ |
-| 📊 Data Analysis    | `pandas`, `numpy`, `matplotlib`, `seaborn` |
-| 🤖 Machine Learning | `scikit-learn`                             |
-| 📉 Visualization    | `plotly`, `matplotlib`, `seaborn`          |
-| 🌐 Dashboard        | `Streamlit`                                |
+### **1. Data Preprocessing & Cleaning**
+
+* Removed null values and duplicates.
+* Renamed columns for clarity.
+* Created a new feature: `PRICE_PER_KG`.
+* Converted datatypes and standardized numeric fields.
+
+### **2. Exploratory Data Analysis (EDA)**
+
+* Top 10 Commodities by Export Value & Quantity.
+* Top 10 Countries by Export Value.
+* Most Expensive & Cheapest Commodities per KG.
+* Heatmaps and Correlation analysis.
+* Interactive visualizations using **Seaborn**, **Matplotlib**, and **Plotly**.
+
+### **3. Advanced Analytics**
+
+* **Scaling:** Used `StandardScaler` for normalization.
+* **PCA:** Reduced high-dimensional data into 2D for better interpretability.
+* **K-Means Clustering:** Segmented exports into 3 distinct groups:
+
+  * High-Value, Low-Quantity Commodities (e.g., Gold, Diamonds)
+  * Bulk Low-Cost Commodities (e.g., Rice, Iron Ore)
+  * Balanced Exports (e.g., Pharma, Machinery, Textiles)
+* **Model Evaluation:** Used Elbow Method and Silhouette Score to validate optimal cluster count (k=3).
+
+### **4. Regression Models (Predictive Analytics)**
+
+Implemented the following regression models to understand and predict export values:
+
+* **Random Forest Regressor**
+* **Decision Tree Regressor**
+* **Linear Regression**
+  Each model was evaluated based on R² score, Mean Absolute Error (MAE), and visualization of predictions.
+
+### **5. Visualization & Dashboard (Streamlit)**
+
+Developed a fully interactive **Streamlit dashboard** enabling users to:
+
+* Filter data by **country**, **commodity**, or **cluster**.
+* Visualize top exports via **bar charts**, **scatter plots**, and **heatmaps**.
+* View PCA-based cluster visualizations and regression model insights.
+* Explore key metrics such as export value, average price per kg, and country contribution.
 
 ---
 
-## 📸 Sneak Peek
+## 🔧 Tech Stack & Tools
 
-| 📍 Dashboard Page | ✨ Description                                   |
-| ----------------- | ----------------------------------------------- |
-| 📌 Overview       | Summary stats, total export value               |
-| 📈 Charts         | Bar, pie, and line charts per commodity/country |
-| 🔍 Cluster View   | ML-based export segmentation                    |
-| 🌎 Country View   | Filter by export partner countries              |
-
----
-
-## 📁 Project Structure
-
-```
-📆 DS_ML_Export_Analysis/
-├— app.py                 # Streamlit app
-├— Cleaned_Dataset.xlsx   # Final dataset with clustering
-├— cluster_model.pkl      # Saved KMeans model
-├— requirements.txt       # Dependencies
-└— README.md              # Project documentation
-```
+**Languages:** Python 3.13
+**Libraries:** Pandas, NumPy, Scikit-learn, Seaborn, Matplotlib, Plotly, Streamlit
+**Environment:** Jupyter Notebook, VS Code
+**Data Source:** [data.gov.in](https://data.gov.in)
+**Dashboard Framework:** Streamlit
+**Machine Learning Models:** PCA, K-Means, Random Forest, Decision Tree, Linear Regression
 
 ---
 
-## ⚙️ Installation & Run Locally
+## 📊 Key Insights
+
+* India’s export structure shows clear segmentation between **high-value niche exports** and **bulk low-cost commodities**.
+* **Gold and precious stones** dominate export value despite low shipment volume.
+* **Agricultural and raw materials** form the backbone of volume-driven trade.
+* **Pharmaceuticals and industrial goods** create a balanced export portfolio.
+* Clustering provides actionable grouping that aligns with India’s trade categories.
+
+---
+
+## 💡 Impact & Applications
+
+* **Policy Making:** Helps identify high-revenue and high-volume export sectors.
+* **Investor Insights:** Aids in recognizing profitable trade clusters.
+* **Trade Strategy:** Supports data-driven decision-making for export diversification.
+* **Educational Use:** Demonstrates integration of analytics, ML, and visualization in a real-world dataset.
+
+---
+
+## 📊 Results Summary
+
+| **Model / Method** | **Purpose**              | **Key Output / Metric**                       |
+| ------------------ | ------------------------ | --------------------------------------------- |
+| PCA                | Dimensionality Reduction | 2D visualization with 90%+ variance retention |
+| K-Means (k=3)      | Clustering               | Silhouette Score: ~0.62                       |
+| Random Forest      | Export Value Prediction  | R²: ~0.88                                     |
+| Decision Tree      | Predictive Model         | R²: ~0.81                                     |
+| Linear Regression  | Baseline Prediction      | R²: ~0.76                                     |
+
+---
+
+## 🔊 Streamlit Dashboard Preview
+
+**Features:**
+
+* Real-time filtering by country and commodity.
+* Cluster-wise visualization of exports.
+* PCA scatter plot for export segmentation.
+* Comparative graphs for top commodities and countries.
+
+**Run the App:**
 
 ```bash
-# 1. Clone the repo
-git clone https://github.com/yourusername/DS_ML_Export_Analysis.git
-cd DS_ML_Export_Analysis
-
-# 2. Install dependencies
-pip install -r requirements.txt
-
-# 3. Run Streamlit app
 streamlit run app.py
 ```
 
 ---
 
-## 💡 Future Scope (Next Phases)
+<img width="1919" height="856" alt="Screenshot 2025-10-27 214442" src="https://github.com/user-attachments/assets/d2a76ce6-657e-4fa5-b91f-329eca099271" />
 
-* Add **forecasting** using time series models.
-* Integrate **RAG + LLM**-based analytics assistant.
-* Use **interactive maps** for geospatial trade flows.
-* Enable **user uploads** for dynamic commodity files.
+<img width="1918" height="850" alt="Screenshot 2025-10-27 214845" src="https://github.com/user-attachments/assets/bd852624-50b9-45b6-bb3c-d12a7b87c5f8" />
 
----
 
-## 🤛‍♂️ Team & Contributions
+## 🔖 References
 
-| Name         | Role                          |
-| ------------ | ----------------------------- |
-| Atharva Kale | Data Science Lead & Developer |
-
-We welcome contributions and feature requests! Feel free to fork, contribute, or open issues. 💬
+1. Government of India – Open Data Portal: Principal Commodity-wise Export Dataset (FY 2021–24). [Available Here](https://data.gov.in)
+2. Streamlit Documentation, Streamlit Inc., 2024. [https://docs.streamlit.io/](https://docs.streamlit.io/)
+3. Scikit-learn Documentation, 2024. [https://scikit-learn.org/stable/documentation.html](https://scikit-learn.org/stable/documentation.html)
+4. Plotly Express Documentation, 2024. [https://plotly.com/python/plotly-express/](https://plotly.com/python/plotly-express/)
+5. Pandas Documentation, 2024. [https://pandas.pydata.org/docs/](https://pandas.pydata.org/docs/)
 
 ---
 
-## 📃 License
+## 🔹 Author Information
 
-This project is licensed under the MIT License – see the [LICENSE](LICENSE) file for details.
+**Name:** Atharva Kale
+**PRN:** 22070521071
+**Section:** C
+**Semester:** VI
+**Institution:** Symbiosis Institute of Technology, Nagpur
+**Project Mentor:** Dr. Piyush Chahuan
+
+---
+
+## 🎨 Acknowledgment
+
+This project was completed as part of the **Machine Learning Daat Science Mini Project** under the guidance of our faculty mentor. Special thanks to open data initiatives and open-source ML tools that made real-world analytics and visualization possible.
+
+---
+
+## 📢 License
+
+This project is developed for academic and research purposes only.
+All dataset copyrights belong to **Government of India (data.gov.in)**.
