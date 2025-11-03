@@ -1,4 +1,4 @@
-# 🇺🇳 AI-Driven Analysis of India's Principal Commodity-wise Exports (2021–24)
+# AI-Driven Analysis of India's Principal Commodity-Wise Exports (2021–24)
 
 ## 🔍 Overview
 
