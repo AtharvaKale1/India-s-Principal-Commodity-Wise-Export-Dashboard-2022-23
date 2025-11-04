@@ -176,7 +176,7 @@ streamlit run app.py
 
 ## 🎨 Acknowledgment
 
-This project was completed as part of the **Machine Learning Daat Science Mini Project** under the guidance of our faculty mentor. Special thanks to open data initiatives and open-source ML tools that made real-world analytics and visualization possible.
+This project was completed as part of the **Machine Learning Data Science Mini Project** under the guidance of our faculty mentor. Special thanks to open data initiatives and open-source ML tools that made real-world analytics and visualization possible.
 
 ---
 
