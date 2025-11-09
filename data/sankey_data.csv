@@ -1,0 +1,56 @@
+source,target,value
+Cluster 0,RICE(OTHER THAN BASMOTI)                          ,6356.63
+Cluster 0,MARINE PRODUCTS                                   ,4049.82
+Cluster 0,BUFFALO MEAT                                      ,3193.71
+Cluster 0,SPICES                                            ,2991.94
+Cluster 0,RICE BASMOTI                                      ,2770.76
+Cluster 1,BULK MINERALS AND ORES                            ,195.6
+Cluster 1,"GRANIT, NATRL STONE AND PRODCT                    ",116.58
+Cluster 2,CASHEW                                            ,336.55
+Cluster 2,SHEEP/GOAT MEAT                                   ,67.02000000000001
+Cluster 2,FRESH FRUITS                                      ,11.510000000000002
+Cluster 2,OTHER OIL SEEDS                                   ,1.8399999999999999
+Cluster 2,FRESH VEGETABLES                                  ,0.8
+Cluster 3,MARINE PRODUCTS                                   ,4028.21
+Cluster 3,RICE BASMOTI                                      ,2016.8600000000001
+Cluster 3,IRON ORE                                          ,1396.83
+Cluster 3,SPICES                                            ,793.41
+BUFFALO MEAT                                      ,MALAYSIA,534.03
+BUFFALO MEAT                                      ,VIETNAM SOC REP,509.02
+BUFFALO MEAT                                      ,EGYPT A RP,408.84
+BULK MINERALS AND ORES                            ,CHINA P RP,195.6
+BULK MINERALS AND ORES                            ,BANGLADESH PR,53.75
+BULK MINERALS AND ORES                            ,KOREA RP,41.87
+CASHEW                                            ,U ARAB EMTS,126.73
+CASHEW                                            ,NETHERLAND,36.4
+CASHEW                                            ,JAPAN,35.99
+FRESH FRUITS                                      ,U ARAB EMTS,151.19
+FRESH FRUITS                                      ,NETHERLAND,125.62
+FRESH FRUITS                                      ,BANGLADESH PR,83.36
+FRESH VEGETABLES                                  ,U ARAB EMTS,158.39
+FRESH VEGETABLES                                  ,BANGLADESH PR,122.98
+FRESH VEGETABLES                                  ,MALAYSIA,117.56
+"GRANIT, NATRL STONE AND PRODCT                    ",CHINA P RP,388.02
+"GRANIT, NATRL STONE AND PRODCT                    ",BANGLADESH PR,116.58
+"GRANIT, NATRL STONE AND PRODCT                    ",GERMANY,56.61
+IRON ORE                                          ,CHINA P RP,1396.83
+IRON ORE                                          ,INDONESIA,73.76
+IRON ORE                                          ,TURKEY,62.81
+MARINE PRODUCTS                                   ,U S A,2582.65
+MARINE PRODUCTS                                   ,CHINA P RP,1445.56
+MARINE PRODUCTS                                   ,VIETNAM SOC REP,491.25
+OTHER OIL SEEDS                                   ,CANADA,28.22
+OTHER OIL SEEDS                                   ,U S A,10.6
+OTHER OIL SEEDS                                   ,GERMANY,4.76
+RICE BASMOTI                                      ,SAUDI ARAB,1036.72
+RICE BASMOTI                                      ,IRAN,980.14
+RICE BASMOTI                                      ,IRAQ,375.41
+RICE(OTHER THAN BASMOTI)                          ,BENIN,529.21
+RICE(OTHER THAN BASMOTI)                          ,CHINA P RP,494.96
+RICE(OTHER THAN BASMOTI)                          ,SENEGAL,432.65
+SHEEP/GOAT MEAT                                   ,U ARAB EMTS,50.34
+SHEEP/GOAT MEAT                                   ,QATAR,8.16
+SHEEP/GOAT MEAT                                   ,KUWAIT,4.36
+SPICES                                            ,CHINA P RP,793.41
+SPICES                                            ,U S A,523.28
+SPICES                                            ,BANGLADESH PR,257.04
