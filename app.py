@@ -1,3 +1,4 @@
+from zipfile import Path
 import streamlit as st
 import pandas as pd
 import plotly.express as px
@@ -127,7 +128,10 @@ div[data-testid="stSlider"] div[data-baseweb="slider"] > div:nth-child(3) {
 def load_all_data():
     # Load main dataset
     try:
-        df = pd.read_excel(r"C:\Users\athar\OneDrive\Desktop\College\DS_ML_Analysis\Cleaned_Principal_Commodity_Exports_with_clusters.xlsx", engine='openpyxl')
+        from pathlib import Path
+        DATA_PATH = Path(__file__).parent / "data" / "Cleaned_Principal_Commodity_Exports_with_clusters.xlsx"
+        df = pd.read_excel(DATA_PATH, engine='openpyxl')
+
         df['Cluster'] = 'Cluster ' + df['Cluster'].astype(str)
     except FileNotFoundError:
         st.error("Main data file not found. Please check the file path in the `load_all_data` function.")
@@ -135,9 +139,9 @@ def load_all_data():
 
     # Load all analytical files
     try:
-        risk_df = pd.read_csv("market_risk_and_diversification.csv")
-        gems_df = pd.read_csv("hidden_gems.csv")
-        sankey_df = pd.read_csv("sankey_data.csv")
+        risk_df = pd.read_csv("C:\\Users\\athar\\OneDrive\\Desktop\\College\\DS_ML_Analysis\\data\\market_risk_and_diversification.csv")
+        gems_df = pd.read_csv("C:\\Users\\athar\\OneDrive\\Desktop\\College\\DS_ML_Analysis\\data\\hidden_gems.csv")
+        sankey_df = pd.read_csv("C:\\Users\\athar\\OneDrive\\Desktop\\College\\DS_ML_Analysis\\data\\sankey_data.csv")
     except FileNotFoundError as e:
         st.error(f"An analytical file is missing: {e}. Please ensure all generated CSV files are present in the same directory as your app.py file.")
         risk_df, gems_df, sankey_df = pd.DataFrame(), pd.DataFrame(), pd.DataFrame()
